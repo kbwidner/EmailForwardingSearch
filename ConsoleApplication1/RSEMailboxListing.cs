@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace ConsoleApplication1
 {
 
-    public class RSEMailboxListing
+    public class RsMailboxListing
 
     {
         public int offset { get; set; }

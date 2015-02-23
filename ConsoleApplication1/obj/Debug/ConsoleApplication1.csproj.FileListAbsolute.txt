@@ -6,5 +6,3 @@ C:\Users\Kevin\documents\visual studio 2013\Projects\ConsoleApplication1\Console
 C:\Users\Kevin\documents\visual studio 2013\Projects\ConsoleApplication1\ConsoleApplication1\bin\Debug\EmailForwardSearch.pdb
 C:\Users\Kevin\documents\visual studio 2013\Projects\ConsoleApplication1\ConsoleApplication1\obj\Debug\EmailForwardSearch.exe
 C:\Users\Kevin\documents\visual studio 2013\Projects\ConsoleApplication1\ConsoleApplication1\obj\Debug\EmailForwardSearch.pdb
-C:\Users\Kevin\documents\visual studio 2013\Projects\ConsoleApplication1\ConsoleApplication1\bin\Debug\EmailForwardSearch.exe.CodeAnalysisLog.xml
-C:\Users\Kevin\documents\visual studio 2013\Projects\ConsoleApplication1\ConsoleApplication1\bin\Debug\EmailForwardSearch.exe.lastcodeanalysissucceeded
