@@ -173,15 +173,12 @@ namespace ConsoleApplication1
                 }
                 catch (System.Net.WebException ex)
                 {
-                    if (ex.Message.Contains("Exceeded request limits"))
-                    {
-                        System.Threading.Thread.Sleep(20000);
-                        retries++;
-                    }
-                    else
-                    {
-                        throw ex;
-                    }
+                    Console.WriteLine("******************************** Ran into Exception ***********************************");
+                    Console.WriteLine(ex.Message);
+                    Console.WriteLine(string.Format("Number of Retries: {0}", retries.ToString()));
+
+                    System.Threading.Thread.Sleep(20000);
+                    retries++;
                 }
             }
             throw new Exception("Number of retries exceeded.");

@@ -92,15 +92,17 @@ namespace ConsoleApplication1
 
                 foreach (Domain domain in domains)
                 {
-                    Report(string.Format(Environment.NewLine + "Domain: {0}", domain.name));
-
                     // get RSE mailboxes
                     var rsMailboxes = cloudOffice.GetRSMailboxes(customer, domain);
+
+                    Report(string.Format(Environment.NewLine + "Domain: {0}, {1} RSEMailboxes", domain.name, rsMailboxes.Count.ToString()));
 
                     foreach (Rsmailbox rsMailbox in rsMailboxes)
                     {
                         var urlMailbox = string.Format("customers/{0}/domains/{1}/rs/mailboxes/{2}", customer.accountNumber, domain.name, rsMailbox.name);
                         var rseMailbox = JsonConvert.DeserializeObject<RSEMailbox>(cloudOffice.Get(urlMailbox));
+
+                        Console.Write(".");
 
                         // if mailbox has forwards, log data
                         if (rseMailbox.emailForwardingAddressList.Count() > 0)
@@ -112,10 +114,14 @@ namespace ConsoleApplication1
                     // get EX mailboxes
                     var exMailboxes = cloudOffice.GetEXMailboxes(customer, domain);
 
+                    Report(string.Format(Environment.NewLine + "Domain: {0}, {1} EXMailboxes", domain.name, exMailboxes.Count.ToString()));
+
                     foreach (Mailbox mailbox in exMailboxes)
                     {
                         var urlEXMailbox = string.Format("customers/{0}/domains/{1}/ex/mailboxes/{2}", customer.accountNumber, domain.name, mailbox.name);
                         var exMailbox = JsonConvert.DeserializeObject<EXMailbox>(cloudOffice.Get(urlEXMailbox));
+
+                        Console.Write(".");
 
                         // if mailbox has forwards, log data
                         if (exMailbox.emailForwardingAddress != string.Empty)
